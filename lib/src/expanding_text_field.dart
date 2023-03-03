@@ -23,9 +23,6 @@ class ExpandingTextField extends StatefulWidget {
   final TextAlignVertical? textAlignVertical;
   final TextDirection? textDirection;
   final bool readOnly = false;
-  @Deprecated('Use `contextMenuBuilder` instead. '
-      'This feature was deprecated after v3.3.0-0.5.pre.')
-  final ToolbarOptions? toolbarOptions;
   final bool? showCursor;
   final bool autofocus = false;
   final String obscuringCharacter = '•';
@@ -111,7 +108,6 @@ class ExpandingTextField extends StatefulWidget {
     this.strutStyle,
     this.textAlignVertical,
     this.textDirection,
-    this.toolbarOptions,
     this.showCursor,
     this.smartDashesType,
     this.smartQuotesType,
@@ -300,7 +296,6 @@ class _ExpandingTextFieldState extends State<ExpandingTextField> {
         smartQuotesType: widget.smartQuotesType,
         spellCheckConfiguration: widget.spellCheckConfiguration,
         strutStyle: widget.strutStyle,
-        toolbarOptions: widget.toolbarOptions,
       ),
     );
   }

@@ -1,7 +1,7 @@
 name: customized_text_field
 description: Animated and customized text-fields package for flutter.
 version: 0.0.1
-homepage:
+homepage: https://github.com/enayat-sps/customized_text_field.git
 
 environment:
   sdk: '>=2.19.2 <3.0.0'
