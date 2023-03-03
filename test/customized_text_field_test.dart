@@ -1,12 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:customized_text_field/customized_text_field.dart';
-
-// void main() {
-//   test('adds one to input values', () {
-//     final calculator = Calculator();
-//     expect(calculator.addOne(2), 3);
-//     expect(calculator.addOne(-7), -6);
-//     expect(calculator.addOne(0), 1);
-//   });
-// }
+void main() {
+  testWidgets("TextField test", (WidgetTester tester) async {
+    var textField = find.byType(TextField);
+    expect(textField, findsOneWidget);
+    await tester.enterText(textField, 'Enayat');
+    expect(find.text('Enayat'), findsOneWidget);
+    print(tester);
+  });
+}
