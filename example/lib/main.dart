@@ -36,15 +36,32 @@ class _CustomTextFieldExampleState extends State<CustomTextFieldExample> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomizedTextField(
+            ExpandingTextField(
               unfocusedFieldSize: MediaQuery.of(context).size.width * 0.6,
-              focusedFieldSize: MediaQuery.of(context).size.width,
+              focusedFieldSize: MediaQuery.of(context).size.width - 100,
             ),
-            // ElevatedButton(
-            //   onPressed: () {},
-            //   child: const Text('Hello There'),
-            // ),
-            TextField()
+            ExpandingTextFormField(
+              unfocusedFieldSize: 150,
+              focusedFieldSize: MediaQuery.of(context).size.width,
+              autoValidateMode: AutovalidateMode.always,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Cannot be empty';
+                }
+                return null;
+              },
+            ),
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Hello There'),
+                ),
+                Expanded(
+                  child: TextFormField(),
+                ),
+              ],
+            ),
           ],
         ),
       ),
