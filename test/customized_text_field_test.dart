@@ -7,6 +7,5 @@ void main() {
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'Enayat');
     expect(find.text('Enayat'), findsOneWidget);
-    print(tester);
   });
 }
